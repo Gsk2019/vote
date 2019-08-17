@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+    <title>投票</title>
+	<script src="libs/jquery.js"></script>
+	<style type="text/css">
+		html{
+			width: 100%;
+			height: 100%;
+			background-image: url(img/index.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		#start{
+			position: absolute;
+			bottom: 250px;
+			width: 400px;
+			left: calc((100% - 400px) / 2);
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">               
+		<img src="img/start.png" id="start">
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('#start').click(function(){
+			window.location.href="chiose.html";
+		})
+	})
+</script>
+
+</html>

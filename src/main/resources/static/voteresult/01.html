@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>投票</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="libs/jquery.js"></script>
+
+	</head>
+	<body>
+		<!--<div class="container">
+			<img src="img/cast.png" id="start">
+		</div>-->
+		<div class="success">
+			<img src="img/success.png">
+		</div>
+		<div class="filed">
+			<img src="img/repeat.png">
+		</div>
+		<div id="ticket">
+
+		</div>
+		<div id="back">
+			<img src="img/back.png" >
+		</div>
+	</body>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script>
+
+        $(function(){
+            //请求参数
+            var list = {};
+            $.ajax({
+                type : "get",
+                url : "http://47.94.244.168:8088/vote/getByCode",
+                data : {paramCode:"syy"},
+                success : function(result) {
+                    getRandomCode(parseInt(result.paramValue));
+                }
+            });
+        });
+
+		var time = 0;
+		function getRandomCode(count) {
+			if (time === count) {
+				return;
+			} else {
+				time++;
+				$('#ticket').html(time);
+			}
+			setTimeout(function() {
+				getRandomCode(count);
+			}, 1);
+		}
+
+	</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+    <title>投票</title>
+	<script src="libs/jquery.js"></script>
+	<style type="text/css">
+		html{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(img/chiose.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">               
+		
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		function getMousePos(event) {
+		            var e = event || window.event;
+					console.log('x:'+e.clientX);
+					console.log('y:'+e.clientY)
+					//第一张图  x:11;x:459;y:180;y:700;
+					//第二张图  x:564;x:950;y:105;y:700;
+					//第三张图  x:11:x:450;y:746;y:1500;
+					//第四张图  x:524;x:950;y:740;y:1500;
+					if(e.clientX > 11 && e.clientX < 460 && e.clientY > 120 && e.clientY < 700){
+						console.log('第一个投票');
+						window.location.href = "01.html"
+					}if(e.clientX > 570 && e.clientX < 1200 && e.clientY > 120 && e.clientY < 700){
+						window.location.href = "02.html"
+					}if(e.clientX > 11 && e.clientX < 460 && e.clientY > 740 && e.clientY < 1500){
+						window.location.href = "03.html"
+					}if(e.clientX > 570 && e.clientX < 1200 && e.clientY > 740 && e.clientY < 1500){
+						window.location.href = "04.html"
+					}
+		             return {'x':e.clientX,'y':e.clientY}
+					
+		        }
+		$('html').click(function(){
+			getMousePos(event);
+		})
+	
+	});
+	
+</script>
+</html>

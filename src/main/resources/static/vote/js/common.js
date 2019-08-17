@@ -1,0 +1,10 @@
+$(function(){
+		$('#start').click(function(){
+			if(localStorage.getItem('ticket')){
+				$('.filed').fadeIn();
+			}else{
+				$('.success').fadeIn();
+				localStorage.setItem('ticket','already');
+			}
+		})
+	})
